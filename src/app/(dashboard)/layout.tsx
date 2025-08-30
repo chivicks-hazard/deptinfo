@@ -10,7 +10,7 @@ interface NavLink {
 }
 
 const layout = ({ children }: { children: React.ReactNode }) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   // const windowObject = window;
 
@@ -36,7 +36,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           {navLinks.map((link, index) => (
             <a
               key={index}
-              // onClick={() => router.push(`/${link}`)}
+              onClick={() => router.push(`/${link}`)}
               className={`hover:text-secondary-light capitalize`}
             >
               link
