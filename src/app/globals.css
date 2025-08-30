@@ -3,11 +3,41 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* CSS HEX */
+  --primary-base: #1e3a8a;
+  --primary-dark: #172554;
+  --primary-light: #334155;
+  --primary-lighter: #3b4f9c;
+  --primary-lightest: #e0e7ff;
+  --secondary-base: #3b82f6;
+  --secondary-dark: #1e40af;
+  --secondary-light: #60a5fa;
+  --secondary-lighter: #93c5fd;
+  --secondary-lightest: #dbeafe;
+  --amber: #ffbf00ff;
+  --ghost-white: #f8f8ffff;
+  --dark-gray: #1f2937ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* --color-background: var(--background);
+  --color-foreground: var(--foreground); */
+
+  --color-primary-base: var(--primary-base);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-lighter: var(--primary-lighter);
+  --color-primary-lightest: var(--primary-lightest);
+  --color-secondary: var(--secondary-base);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-lighter: var(--secondary-lighter);
+  --color-secondary-lightest: var(--secondary-lightest);
+  --color-accent: var(--amber);
+  --color-background: var(--ghost-white);
+  --text-color: var(--dark-gray);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -20,7 +50,8 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--ghost-white);
+  color: var(--dark-gray);
   font-family: Arial, Helvetica, sans-serif;
 }
+
