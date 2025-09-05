@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
@@ -6,6 +7,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState<string | undefined>("");
   const [password, setPassword] = useState<string | undefined>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,9 +37,18 @@ const LoginPage = () => {
 
       const data = await res.json();
       console.log("Login response: ", data);
+      console.log(data);
+      // const readableData = JSON.parse(data);
 
       if (res.ok) {
+        console.log("Res", data.data.role);
+        if (data.data.role === "admin") {
+          router.push("/admin/overview");
+        } else if (data.data.role === "user") {
+          router.push("/user/home");
+        }
         toast.success("Login successful!");
+        console.log(res.ok);
       } else {
         toast.error("Login failed");
       }
